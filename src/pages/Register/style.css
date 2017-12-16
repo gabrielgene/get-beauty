@@ -1,0 +1,40 @@
+.register .textFieldWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.register .textFieldWrapper .textField {
+  width: 85%;
+}
+
+.register header {
+  text-align: center;
+  margin: 16px;
+}
+
+.register header h2 {
+  font-size: 29px;
+}
+
+.register .textField section {
+  font-size: 15px;
+  margin-bottom: 60px;
+}
+
+.register .button {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  z-index: 9999;
+}
+
+.register .textField .cepWarning {
+  color: red;
+  position: absolute;
+  right: 10%;
+  top: 193px;
+}
+
+.register .selectService {
+  margin-top: 8px;
+}

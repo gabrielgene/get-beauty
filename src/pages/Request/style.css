@@ -1,0 +1,28 @@
+.request .tab {
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  z-index: 1;
+}
+
+.request .request-info {
+  margin-top: 40px;
+  margin-bottom: 50px;
+  padding: 24px;
+}
+
+.request .button {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+}
+
+
+.request .request-info .cep-warning {
+  color: red;
+  position: absolute;
+  margin-top: 20px;
+  width: 177px;
+  margin-left: 130px;
+  z-index: 1;
+}

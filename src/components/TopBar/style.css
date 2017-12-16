@@ -1,0 +1,20 @@
+.payment {
+  display: flex;
+  margin-top: 20px;
+  color: white;
+  font-size: 16px;
+}
+
+.payment .icon {
+  margin-left: 10px;
+  margin-right: 10px;
+  position: relative;
+  bottom: 1px;
+}
+
+.topBar {
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  z-index: 9999999;
+}

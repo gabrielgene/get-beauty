@@ -1,0 +1,11 @@
+.requestClient {
+  margin-top: 64px;
+  margin-bottom: 50px;
+}
+
+.bidButton {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  z-index: 9999;
+}

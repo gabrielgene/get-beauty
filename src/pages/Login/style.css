@@ -1,0 +1,18 @@
+.login {
+  padding: 0px 8px;
+}
+
+.login-card {
+  margin-top: 8px;
+  padding: 24px;
+}
+
+.login-card header h3 {
+  font-weight: 500;
+  text-align: center;
+}
+
+.login-card section .text {
+  font-weight: 300;
+  margin-bottom: 16px;
+}

@@ -1,0 +1,16 @@
+.tabFixed {
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  z-index: 1;
+}
+.tabFixed .homeTab {
+  position: fixed;
+  width: 100%;
+  top: 64px;
+}
+
+.contentScroll {
+  margin-top: 112px;
+  z-index: 0;
+}

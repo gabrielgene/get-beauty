@@ -1,0 +1,10 @@
+version: '2'
+
+services:
+  db:
+    image: mongo
+    network_mode: 'host'
+    ports:
+      - "27017:27017"
+    expose:
+      - "8080"

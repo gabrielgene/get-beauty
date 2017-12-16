@@ -1,0 +1,39 @@
+.modalButton {
+  padding-top: 13px;
+  width: 100px;
+}
+
+.landingPage section {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 9vh;
+}
+
+.landingPage section .callToActionCard {
+  width: 95%;
+  margin-bottom: 20px;
+}
+
+.landingPage section header {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.landingPage section .callToActionCard h3 {
+  text-align: center;
+  font-size: 23px;
+  width: 78%;
+}
+
+.landingPage section .buttonWrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+  margin-top: 30px;
+}
+
+.landingPage section .button {
+  width: 85%;
+}
