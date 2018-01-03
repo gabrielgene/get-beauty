@@ -18,6 +18,19 @@ import RaisedButton from 'material-ui/RaisedButton';
 import { getRequestById, updateRequest, bidService, getCreditsByProId } from '../../fetches';
 import './style.css';
 
+const requestBid = {
+  request: {
+    service: 'Serviço',
+    amount: '2 pessoas',
+    when: 'hoje',
+    requestId: 1,
+  },
+  client: {
+    name: 'Genê',
+    phone: '(99) 99999-9999',
+  }
+};
+
 export default class RequestInfo extends React.Component {
   constructor(props) {
     super(props);
@@ -26,8 +39,9 @@ export default class RequestInfo extends React.Component {
 
   async componentDidMount() {
     const { requestId, proId } = this.props.router.params;
-    const requestById = await getRequestById(requestId);
-    const { request, client } = requestById
+    // const requestById = await getRequestById(requestId);
+
+    const { request, client } = requestBid;
     if (this.isClient()) {
       this.setState({ isClient: true, request: request, client: client });
     } else {
@@ -83,65 +97,65 @@ export default class RequestInfo extends React.Component {
           credits={isClient ? null : credits}
         />
         <Paper className="requestClient">
-        <div>
-          <List>
-            <ListItem
-              leftIcon={<WorkIcon />}
-              primaryText="Serviço"
-              secondaryText={request.service}
-            />
-            <ListItem
-              leftIcon={<UserIcon />}
-              primaryText="Nome"
-              secondaryText={client.name}
-            />
-            <ListItem
-              leftIcon={<PlaceIcon />}
-              primaryText="Eng. Velho de Brotas, Salvador - BA"
-              secondaryText={client.cep}
-            />
-            <ListItem
-              leftIcon={<ActionInfo />}
-              primaryText="Para quem?"
-              secondaryText={request.who}
-            />
-            <ListItem
-              leftIcon={<ActionInfo />}
-              primaryText="Para quantas pessoas?"
-              secondaryText={request.amount}
-            />
-            <ListItem
-              leftIcon={<ActionInfo />}
-              primaryText="Para quando?"
-              secondaryText={request.when}
-            />
-            <ListItem
-              leftIcon={<ActionInfo />}
-              primaryText="Informações adicionais"
-              secondaryText={request.addInfo}
-            />
-          </List>
-          <Divider inset={true} />
-          <List>
-            <Subheader inset={true}>Dados do Cliente</Subheader>
-            <ListItem
-              leftIcon={<PhoneIcon color={blue500} />}
-              primaryText={client.phone}
-            />
-            <ListItem
-              leftIcon={<EmailIcon color={blue500} />}
-              primaryText={client.email}
-            />
-            {isClient
-              ?
-              null
-              :
+          <div>
+            <List>
               <ListItem
-                leftIcon={<PaymentIcon color={blue500} />}
-                primaryText={`Esse serviço custa ${request.price} créditos`}
+                leftIcon={<WorkIcon />}
+                primaryText="Serviço"
+                secondaryText={request.service}
               />
-            }
-          </List>
+              <ListItem
+                leftIcon={<UserIcon />}
+                primaryText="Nome"
+                secondaryText={client.name}
+              />
+              <ListItem
+                leftIcon={<PlaceIcon />}
+                primaryText="Eng. Velho de Brotas, Salvador - BA"
+                secondaryText={client.cep}
+              />
+              <ListItem
+                leftIcon={<ActionInfo />}
+                primaryText="Para quem?"
+                secondaryText={request.who}
+              />
+              <ListItem
+                leftIcon={<ActionInfo />}
+                primaryText="Para quantas pessoas?"
+                secondaryText={request.amount}
+              />
+              <ListItem
+                leftIcon={<ActionInfo />}
+                primaryText="Para quando?"
+                secondaryText={request.when}
+              />
+              <ListItem
+                leftIcon={<ActionInfo />}
+                primaryText="Informações adicionais"
+                secondaryText={request.addInfo}
+              />
+            </List>
+            <Divider inset={true} />
+            <List>
+              <Subheader inset={true}>Dados do Cliente</Subheader>
+              <ListItem
+                leftIcon={<PhoneIcon color={blue500} />}
+                primaryText={client.phone}
+              />
+              <ListItem
+                leftIcon={<EmailIcon color={blue500} />}
+                primaryText={client.email}
+              />
+              {isClient
+                ?
+                null
+                :
+                <ListItem
+                  leftIcon={<PaymentIcon color={blue500} />}
+                  primaryText={`Esse serviço custa ${request.price} créditos`}
+                />
+              }
+            </List>
           </div>
         </Paper>
         {isClient

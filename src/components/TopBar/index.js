@@ -29,7 +29,7 @@ class TopBar extends React.Component {
           zDepth={0}
           title={title}
           iconElementLeft={back ? <IconButton><Back /></IconButton> : <IconButton><MenuIcon /></IconButton>}
-          onLeftIconButtonTouchTap={back ? this.backToHome : this.handleToggle}
+          onLeftIconButtonClick={back ? this.backToHome : this.handleToggle}
         >{
             userType === "pro"
               ?

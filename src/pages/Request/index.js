@@ -2,7 +2,7 @@ import React from 'react';
 import { Tabs, Tab } from 'material-ui/Tabs';
 // From https://github.com/oliviertassinari/react-swipeable-views
 import SwipeableViews from 'react-swipeable-views';
-import SelectField from 'material-ui/SelectField';
+// import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
@@ -72,7 +72,7 @@ export default class Request extends React.Component {
   };
 
   request = async () => {
-    await postRequest(this.state.data);
+    // await postRequest(this.state.data);
     this.props.router.push('/requests/active');
   }
 
@@ -167,8 +167,6 @@ export default class Request extends React.Component {
                 floatingLabelText="Qual serviço ?"
                 value={service}
                 fullWidth
-                validators={['required']}
-                errorMessages={['Você precisa informar o tipo de serviço']}
                 onChange={this.serviceChange}
               >
                 {this.menuTypes(service, servicesName)}
@@ -178,8 +176,6 @@ export default class Request extends React.Component {
                 floatingLabelText="Para quem é ?"
                 value={who}
                 fullWidth
-                validators={['required']}
-                errorMessages={['Você precisa infomar para quem é o serviço']}
                 onChange={this.whoChange}
               >
                 {this.menuTypes(who, whoNames)}
@@ -189,8 +185,6 @@ export default class Request extends React.Component {
                 floatingLabelText="Para quantas pessoas ?"
                 value={amount}
                 fullWidth
-                validators={['required']}
-                errorMessages={['Você precisa informar para quantas pessoas é o serviço']}
                 onChange={this.amountChange}
               >
                 {this.menuTypes(amount, amountNames)}
@@ -200,8 +194,6 @@ export default class Request extends React.Component {
                 floatingLabelText="Para quando é ?"
                 value={when}
                 fullWidth
-                validators={['required']}
-                errorMessages={['Você precisa informar para quando é o serviço']}
                 onChange={this.whenChange}
               >
                 {this.menuTypes(when, whenNames)}
@@ -236,8 +228,6 @@ export default class Request extends React.Component {
                 floatingLabelText="Nome"
                 fullWidth
                 value={name}
-                validators={['required']}
-                errorMessages={['Você precisa informar o seu nome']}
                 onChange={this.nameChange}
               />
               <div className="cep-warning">
@@ -250,8 +240,6 @@ export default class Request extends React.Component {
                 floatingLabelText="CEP"
                 fullWidth
                 value={cep}
-                validators={['required']}
-                errorMessages={['Você precisa informar o seu cep']}
                 onChange={this.cepChange}
               />
               <TextValidator
@@ -259,8 +247,6 @@ export default class Request extends React.Component {
                 floatingLabelText="Email"
                 fullWidth
                 value={email}
-                validators={['required', 'isEmail']}
-                errorMessages={['Você precisa informar o seu email', 'Email invalido']}
                 onChange={this.emailChange}
               />
               <TextValidator
@@ -271,10 +257,8 @@ export default class Request extends React.Component {
                 onChange={this.phoneChange}
               />
               <section>
-                <text>
-                  Vamos enviar um SMS com o código de
+                Vamos enviar um SMS com o código de
                 verificação para confirmar o número do seu celular.
-              </text>
               </section>
               <RaisedButton
                 primary

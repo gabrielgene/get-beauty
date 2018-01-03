@@ -53,7 +53,7 @@ const plansCards = plans.map((plan) => (
 
 const Credit = () => (
   <div className="credit">
-    <TopBar title="Créditos" back userType="pro" />
+    <TopBar title="Créditos" back userType="pro" credits="10" />
     <header>
       <h4>Qual pacote de créditos você deseja ?</h4>
     </header>

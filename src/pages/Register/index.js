@@ -55,14 +55,15 @@ class Register extends React.Component {
   }
 
   register = () => {
-    postPro(this.state).then(pro => {
-      if (pro === 'OK') {
-        alert('Profissional já existe');
-      } else {
-        const { proId } = pro;
-        this.props.router.push(`/home/${proId}`);
-      }
-    });
+    this.props.router.push('/home/0');
+    // postPro(this.state).then(pro => {
+    //   if (pro === 'OK') {
+    //     alert('Profissional já existe');
+    //   } else {
+    //     const { proId } = pro;
+    //     this.props.router.push(`/home/${proId}`);
+    //   }
+    // });
   }
 
   render() {
@@ -113,9 +114,7 @@ class Register extends React.Component {
                 onChange={this.phoneChange}
               />
               <section>
-                <text>
-                  Vamos enviar um SMS com o código de verificação para confirmar o número do seu celular.
-                </text>
+                Vamos enviar um SMS com o código de verificação para confirmar o número do seu celular.
               </section>
             </div>
           </div>

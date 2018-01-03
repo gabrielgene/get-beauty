@@ -16,18 +16,19 @@ class Login extends React.Component {
     this.setState({ login: value });
 
   login = () => {
-    if (this.state.login === "") {
-      alert("Email não pode ser vazio");
-    } else {
-      postProLogin(this.state).then(pro => {
-        if (pro.message !== undefined) {
-          alert('Email invalido');
-        } else {
-          const { proId } = pro;
-          this.props.router.push(`/home/${proId}`);
-        }
-      });
-    }
+    this.props.router.push('/home/0')
+    // if (this.state.login === "") {
+    //   alert("Email não pode ser vazio");
+    // } else {
+    //   postProLogin(this.state).then(pro => {
+    //     if (pro.message !== undefined) {
+    //       alert('Email invalido');
+    //     } else {
+    //       const { proId } = pro;
+    //       this.props.router.push(`/home/${proId}`);
+    //     }
+    //   });
+    // }
   }
 
   render() {

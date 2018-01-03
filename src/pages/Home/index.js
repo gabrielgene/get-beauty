@@ -7,6 +7,33 @@ import TopBar from '../../components/TopBar';
 import { getRequestsByProId, getRequestsBid, getCreditsByProId } from '../../fetches';
 import './style.css';
 
+const requestsData = [
+  {
+    request: {
+      service: 'Serviço',
+      amount: '2 pessoas',
+      when: 'hoje',
+      requestId: 1,
+    },
+    client: {
+      name: 'Genê',
+      phone: '(99) 99999-9999',
+    }
+  },
+  {
+    request: {
+      service: 'Serviço',
+      amount: '2 pessoas',
+      when: 'hoje',
+      requestId: 1,
+    },
+    client: {
+      name: 'Genê',
+      phone: '(99) 99999-9999',
+    }
+  },
+]
+
 export default class Home extends React.Component {
   constructor(props) {
     super(props);
@@ -25,7 +52,8 @@ export default class Home extends React.Component {
     const { proId } = params;
     const { query } = location;
 
-    const creditsObject = await getCreditsByProId(proId)
+    // const creditsObject = await getCreditsByProId(proId)
+    const creditsObject = { credits: 10 };
     const { credits } = creditsObject;
     this.setState({ credits: credits });
 
@@ -46,14 +74,16 @@ export default class Home extends React.Component {
   makeRequest = async (value) => {
     if (value === 0) {
       const { params } = this.props.router;
-      const requests = await getRequestsByProId(params.proId);
+      // const requests = await getRequestsByProId(params.proId);
+      const requests = requestsData;
       this.setState({
         oportunities: requests,
         slideIndex: value,
       });
     } else {
       const { params } = this.props.router;
-      const requests = await getRequestsBid(params.proId);
+      // const requests = await getRequestsBid(params.proId);
+      const requests = requestsData;
       this.setState({
         myRequests: requests,
         slideIndex: value,
@@ -69,7 +99,7 @@ export default class Home extends React.Component {
         <div className="tabFixed">
           <TopBar
             credits={credits}
-            title=""
+            title="Gabriel Genê"
             userType="pro"
           />
           <Tabs

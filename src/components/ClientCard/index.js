@@ -28,11 +28,9 @@ export default class ClientCard extends React.Component {
           <h3>{request.service}</h3>
         </header>
         <section>
-          <text>
             {`Olá sou ${client.name} e preciso do seu serviço
             para ${request.amount} para ${request.when}, por
             favor entrar em contato através do telefone ${client.phone}.`}
-          </text>
         </section>
         {
           this.props.userType === "pro"
